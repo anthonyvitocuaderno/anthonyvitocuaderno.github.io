@@ -1,5 +1,7 @@
 $primary-color: #000
 $dark-color: #212121
+$gray-color: #999
+$progress-fill-color: #dfdfdf
 $cup-color: white
 $boil-color: #512c2c
 
@@ -21,6 +23,23 @@ body
 	width: 100vw
 	position: fixed
 	z-index: 1030
+
+	.progress-bar
+		position: fixed
+		top: 0
+		height: 4px
+		width: 100%
+		z-index: 1030
+		background-color: $progress-fill-color
+		border-bottom: 1px solid $gray-color
+
+		.fill
+			background-color: $boil-color
+			height: 4px
+			width: 0
+			transition: 5s ease all
+		.fill.percent-100
+			width: 100%
 
 	.coffee
 		text-align: center

@@ -41,6 +41,11 @@ gulp.task('vendor', function() {
       './node_modules/font-awesome/fonts/*',
     ])
     .pipe(gulp.dest('./vendor/fontawesome/fonts'))
+
+  gulp.src([
+      './node_modules/animate.css/animate.min.css',
+    ])
+    .pipe(gulp.dest('./vendor/animate.css'))
 })
 
 // Compiles Sass css

@@ -33,12 +33,15 @@ var splash = {
 				}
 			}, splash.constants.typewriterDelay / 5)
 		}, splash.constants.quoteDelay)
+	},
+	animateProgressBar: function() {
+		$('.splash .progress-bar>.fill').addClass('percent-100')
 	}
 }
 
 $(document).ready(function () {
 
-	
+	splash.animateProgressBar()
 
 	splash.animateQuote()
 	

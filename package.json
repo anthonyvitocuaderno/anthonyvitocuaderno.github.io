@@ -12,6 +12,7 @@
         "template"
     ],
     "dependencies": {
+        "animate.css": "^3.6.1",
         "bootstrap": "4.1.1",
         "font-awesome": "^4.7.0",
         "jquery": "3.3.1"

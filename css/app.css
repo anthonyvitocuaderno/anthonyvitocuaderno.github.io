@@ -16,6 +16,21 @@ body {
   width: 100vw;
   position: fixed;
   z-index: 1030; }
+  .splash .progress-bar {
+    position: fixed;
+    top: 0;
+    height: 4px;
+    width: 100%;
+    z-index: 1030;
+    background-color: #dfdfdf;
+    border-bottom: 1px solid #999; }
+    .splash .progress-bar .fill {
+      background-color: #512c2c;
+      height: 4px;
+      width: 0;
+      transition: 5s ease all; }
+    .splash .progress-bar .fill.percent-100 {
+      width: 100%; }
   .splash .coffee {
     text-align: center;
     position: relative; }
