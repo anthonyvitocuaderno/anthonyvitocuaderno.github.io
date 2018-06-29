@@ -1,0 +1,105 @@
+$primary-color: #000
+$dark-color: #212121
+$cup-color: white
+$boil-color: #512c2c
+
+body
+	color: white
+	background: url(http://placehold.it/1920x1080) 
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	background-size: cover
+	-o-background-size: cover
+
+.splash.end 
+	opacity: 0
+	transition: 0.5s ease all
+
+.splash 
+	background-color: $dark-color
+	height: 100vh
+	width: 100vw
+	position: fixed
+	z-index: 1030
+
+	.coffee
+		display: inline-block
+		text-align: center
+		position: relative
+
+		.coffee-cup 
+			display: inline-block
+			background-color: $cup-color
+			height: 150px
+			width: 200px
+			border-bottom-left-radius: 70px
+			border-bottom-right-radius: 70px
+
+			&:before
+				content: " "
+				height: 45px
+				width: 35px
+				background-color: $dark-color
+				display: block
+				margin-top: 25px
+				margin-left: 204px
+				border-top-right-radius: 50px
+				border-bottom-right-radius: 70px
+				position: absolute
+
+			&:after
+				content: " "
+				height: 75px
+				width: 50px
+				background-color: $cup-color
+				display: block
+				margin-top: 10px
+				margin-left: 204px
+				border-top-right-radius: 50px
+				border-bottom-right-radius: 70px
+
+
+		.coffee-fill
+			height: 70px
+			width: 180px
+			background-color: $dark-color
+			position: absolute
+			bottom: 24px
+			margin-left: 20px
+			border-bottom-left-radius: 70px
+			border-bottom-right-radius: 70px
+
+		.coffee-fill.full
+			transition: 1.5s ease all
+			height: 130px
+			background-color: $boil-color
+
+		.coffee-plate 
+			background-color: $cup-color
+			height: 4px
+			width: 220px
+			border-radius: 4px
+
+		.quote
+			position: absolute
+			left: 0
+			right: 0
+			margin-top: 1rem
+			letter-spacing: 2px
+			font-size: 1rem
+			display: inline-block
+
+		&:after
+			content: ""
+			display: block
+			letter-spacing: 1px
+			background-color: $cup-color
+			height: 4px
+			width: 180px
+			margin-left: 20px
+			border-bottom-left-radius: 4px
+			border-bottom-right-radius: 4px
+
+
+
+
