@@ -1,0 +1,22 @@
+{
+    "title": "",
+    "name": "",
+    "version": "4.1.1",
+    "description": "",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template"
+    ],
+    "dependencies": {
+        "bootstrap": "4.1.1",
+        "jquery": "3.3.1"
+    },
+    "devDependencies": {
+        "browser-sync": "2.24.3",
+        "gulp": "^3.9.1"
+    }
+}
