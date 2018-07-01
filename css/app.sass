@@ -1,28 +1,52 @@
-$primary-color: #000
+$primary-color: #820000
 $dark-color: #212121
 $gray-color: #999
 $progress-fill-color: #dfdfdf
 $cup-color: white
 $boil-color: #512c2c
 
+$heading-font-size: 1.6rem
+
 body
-	color: white
-	background: url(http://placehold.it/1920x1080) 
-	-webkit-background-size: cover
-	-moz-background-size: cover
-	background-size: cover
-	-o-background-size: cover
+	color: $dark-color
+	background-color: #999
+
+.hero
+	.title
+		color: white
+		font-weigt: bold
+		text-transform: text-uppercase
+
+		.accent
+			color: $primary-color
+
+		.underline
+			height: 2px
+			background-color: $primary-color
+			width: 75%
+
+	.sub-title
 
 .splash.end 
 	opacity: 0
-	transition: 0.5s ease all
+	transition: 1.5s ease all
 
 .splash 
+	color: white
 	background-color: $dark-color
 	height: 100vh
 	width: 100vw
 	position: fixed
 	z-index: 1030
+	letter-spacing: 2px
+	font-size: $heading-font-size
+	font-style: italic
+
+	.splash-heading
+		position: fixed
+		top: calc(50% - 250px)
+		text-align: center
+		opacity: 0.5
 
 	.progress-bar
 		position: fixed
@@ -37,7 +61,7 @@ body
 			background-color: $boil-color
 			height: 4px
 			width: 0
-			transition: 5s ease all
+			transition: 7s ease all
 		.fill.percent-100
 			width: 100%
 
@@ -104,8 +128,6 @@ body
 			left: 0
 			right: 0
 			top: calc(50% - 75px)
-			letter-spacing: 2px
-			font-size: 1.6rem
 			width: 100%
 			opacity: 0
 		

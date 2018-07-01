@@ -1,7 +1,7 @@
 var splash = {
 	constants: {
-		splashDuration: 5000,
-		quoteDelay: 1500,
+		splashDuration: 6000,
+		quoteDelay: 2500,
 		typewriterDelay: 300
 	},
 	animateQuote: function() {
@@ -19,15 +19,16 @@ var splash = {
 			var typewriterAnimation = setInterval(function() {
 				var slicedMessageString = messageString.slice(0, quoteLabel.text().length + 1)
 
-				quoteLabel.html(slicedMessageString)
+				quoteLabel.html(slicedMessageString + '|')
 				if (slicedMessageString.length >= messageString.length) {
-					
+					quoteLabel.html(slicedMessageString)
 
 					slicedMessageString = messageString2.slice(0, quoteLabel2.text().length + 1)
 
-					quoteLabel2.html(slicedMessageString)
+					quoteLabel2.html(slicedMessageString + '|')
 
 					if (slicedMessageString.length >= messageString2.length) {
+						quoteLabel2.html(slicedMessageString)
 						clearInterval(typewriterAnimation)
 					}
 				}

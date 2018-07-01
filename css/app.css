@@ -1,21 +1,37 @@
 body {
+  color: #212121;
+  background-color: #999; }
+
+.hero .title {
   color: white;
-  background: url(http://placehold.it/1920x1080);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover; }
+  font-weigt: bold;
+  text-transform: text-uppercase; }
+  .hero .title .accent {
+    color: #820000; }
+  .hero .title .underline {
+    height: 2px;
+    background-color: #820000;
+    width: 75%; }
 
 .splash.end {
   opacity: 0;
-  transition: 0.5s ease all; }
+  transition: 1.5s ease all; }
 
 .splash {
+  color: white;
   background-color: #212121;
   height: 100vh;
   width: 100vw;
   position: fixed;
-  z-index: 1030; }
+  z-index: 1030;
+  letter-spacing: 2px;
+  font-size: 1.6rem;
+  font-style: italic; }
+  .splash .splash-heading {
+    position: fixed;
+    top: calc(50% - 250px);
+    text-align: center;
+    opacity: 0.5; }
   .splash .progress-bar {
     position: fixed;
     top: 0;
@@ -28,7 +44,7 @@ body {
       background-color: #512c2c;
       height: 4px;
       width: 0;
-      transition: 5s ease all; }
+      transition: 7s ease all; }
     .splash .progress-bar .fill.percent-100 {
       width: 100%; }
   .splash .coffee {
@@ -86,8 +102,6 @@ body {
       left: 0;
       right: 0;
       top: calc(50% - 75px);
-      letter-spacing: 2px;
-      font-size: 1.6rem;
       width: 100%;
       opacity: 0; }
     .splash .coffee .quote-part-2 .text,
