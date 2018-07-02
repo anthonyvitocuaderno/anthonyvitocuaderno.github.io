@@ -1,6 +1,6 @@
 var splash = {
 	constants: {
-		splashDuration: 000,
+		splashDuration: 6000,
 		quoteDelay: 2500,
 		typewriterDelay: 300
 	},
