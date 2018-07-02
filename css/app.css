@@ -12,8 +12,7 @@ body {
   color: inherit; }
 
 nav.fixed-top {
-  left: 165px;
-  background-color: #272333; }
+  left: 165px; }
   nav.fixed-top small {
     color: white;
     margin-top: 0.5rem;
