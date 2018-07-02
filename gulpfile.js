@@ -45,7 +45,7 @@ gulp.task('vendor', function() {
   gulp.src([
       './node_modules/animate.css/animate.min.css',
     ])
-    .pipe(gulp.dest('./vendor/animate.css'))
+    .pipe(gulp.dest('./vendor/animatecss'))
 })
 
 // Compiles Sass css
