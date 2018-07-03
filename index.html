@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body class="scroll-locked">
     <div class="splash d-flex align-items-center justify-content-center">
         <p class="splash-heading">Patience is not simply the ability to wait...</p>
         <div class="coffee">
@@ -44,33 +44,40 @@
         </div>
     </div>
     <!-- Navigation -->
-    <nav class="fixed-top d-none d-md-block">
-        <button class="btn btn-primary float-right rounded-0"><a href="mailto:anthonyvitocuaderno@gmail.com"><i class="fa fa-envelope-o"></i></a></button>
-        <button class="btn btn-secondary float-right rounded-0"><i class="fa fa-download"></i></button> 
-        <div class="hr float-right"></div>
-        <small class="d-inline-block float-right"><i class="fa fa-phone"></i> +63 915 475 8928</small>
+    <nav class="fixed-top d-none d-md-block position-absolute">
+        <span class="btns">
+          <a class="btn btn-primary float-right rounded-0" href="https://www.linkedin.com/in/anthony-vito-cuaderno-45a9918a/"><i class="fa fa-linkedin"></i></a>
+          <a class="btn btn-secondary float-right rounded-0" href="https://www.facebook.com/vito.cuaderno"><i class="fa fa-facebook"></i></a>
+          <div class="hr float-right"></div>
+
+
+        
+          <div class="vertical-rule"><small>2018</small></div>
+        </span>
+        
+        <small class="d-inline-block"><a href="tel:+639154758928"><i class="fa fa-phone"></i> +63 915 475 8928</a></small>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom">
         <div class="container">
-            <a class="navbar-brand" href="#">Title</a>
+            <a class="navbar-brand" href="#">Vito <span class="text-primary">Cuaderno</span> | <small>Web and Mobile Developer</small></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Active
-                <span class="sr-only">(current)</span>
-              </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#page-1">About Me
+                          <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inactive</a>
+                        <a class="nav-link" href="#">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inactive</a>
+                        <a class="nav-link" href="#">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inactive</a>
+                        <a class="nav-link" href="#">Achievements</a>
                     </li>
                 </ul>
             </div>
@@ -79,17 +86,18 @@
 
     <!-- Page Content -->
     <section class="hero">
+        <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 title-heading">
                   <div class="mb-5 mt-2 d-block d-md-none">
-                    <small class="d-block"><i class="fa fa-phone"></i> &nbsp; +63 915 475 8928</small>
+                    <small class="d-block"><a href="tel:+639154758928"><i class="fa fa-phone"></i> &nbsp; +63 915 475 8928</a></small>
                     <small class="d-block"><i class="fa fa-map-marker"></i> &nbsp; Brgy. Pio Del Pilar, Makati City</small>
                   </div>
-                  <h1 class="title mt-5">VITO <span class="accent">CUADERNO</span></h1>
-                  <h2 class="sub-title">Web and Mobile Developer</h2>
+                  <h4 class="title mt-5">VITO <span class="accent">CUADERNO</span></h4>
+                  <h6 class="sub-title">Web and Mobile Developer</h6>
                   <div>
-                    <button class="btn btn-primary-outline"><a href="mailto:anthonyvitocuaderno@gmail.com">CONTACT <i class="fa fa-envelope-o"></i></a></button> <button class="btn btn-secondary-outline">RESUME <i class="fa fa-download"></i></button> 
+                    <button class="btn btn-primary-outline"><a href="mailto:anthonyvitocuaderno@gmail.com">EMAIL <i class="fa fa-envelope-o"></i></a></button> <button class="btn btn-secondary-outline">RESUM&Eacute; <i class="fa fa-download"></i></button> 
                   </div>
                 </div>
                 <div class="col-12">
@@ -106,6 +114,50 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="page page-1">
+      <div class="container">
+        <div class="row pt-5">
+
+          <div class="col-12 my-3 toAnimate fromCenter">
+            <h5 class="heading text-center">About Me</h5>
+          </div>
+
+          <div class="col-md-6 toAnimate d-none fromLeft">
+            <h6 class="subheading">Subheading</h6>
+            <p>
+              Bacon ipsum dolor amet cupim kielbasa landjaeger t-bone swine. Bacon shoulder fatback, pig corned beef alcatra ribeye doner chicken leberkas cupim prosciutto chuck. Spare ribs pork belly burgdoggen pork chop boudin beef ribs shankle beef drumstick t-bone pancetta hamburger ribeye filet mignon. Venison salami shankle pig boudin tail. Meatball fatback biltong, frankfurter chuck kielbasa alcatra porchetta pork chop ham tongue bresaola.
+            </p>
+          </div>
+
+          <div class="col-md-6 toAnimate d-none fromRight">
+
+            <img src="http://placehold.it/640x480" class="img-responsive" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page page-2">
+
+      <div class="parallax"></div>
+      <div class="container">
+        <div class="row pt-5">
+
+          <div class="col-12 my-3 toAnimate fromCenter">
+            <h5 class="heading text-center">Skills</h5>
+          </div>
+          <div class="col-md-6 toAnimate d-none fromLeft">
+          </div>
+          <div class="col-md-6 toAnimate d-none fromRight">
+            <h6 class="subheading">Subheading</h6>
+            <p>
+              Bacon ipsum dolor amet cupim kielbasa landjaeger t-bone swine. Bacon shoulder fatback, pig corned beef alcatra ribeye doner chicken leberkas cupim prosciutto chuck. Spare ribs pork belly burgdoggen pork chop boudin beef ribs shankle beef drumstick t-bone pancetta hamburger ribeye filet mignon. Venison salami shankle pig boudin tail. Meatball fatback biltong, frankfurter chuck kielbasa alcatra porchetta pork chop ham tongue bresaola.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Bootstrap core JavaScript -->

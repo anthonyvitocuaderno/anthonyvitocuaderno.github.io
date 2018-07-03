@@ -30,6 +30,13 @@ var splash = {
 					if (slicedMessageString.length >= messageString2.length) {
 						quoteLabel2.html(slicedMessageString)
 						clearInterval(typewriterAnimation)
+
+						setTimeout(function() {
+							$('body').removeClass('scroll-locked')
+							$('nav.fixed-top').addClass('animated fadeInRight')
+							$('.hero .title-heading').addClass('animated fadeInLeft')
+							$('.hero .ring').addClass('animated zoomIn')
+						}, 2100)
 					}
 				}
 			}, splash.constants.typewriterDelay / 5)
@@ -41,6 +48,8 @@ var splash = {
 }
 
 $(document).ready(function () {
+	const body = $('html, body');
+    body.animate({scrollTop:0}, 500);
 
 	splash.animateProgressBar()
 
