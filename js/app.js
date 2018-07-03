@@ -42,9 +42,21 @@ var pager = $(document).ready(function() {
 			page = clamp(page - 1, 0, pages)
 		}
 		
-		$('.page-' + page + ' .toAnimate').addClass('d-none')
 		// $(document).scrollTop($(window).height() * page)
-		var body = $('html, body').animate({scrollTop: $(window).height() * page}, 500, function() {
+		scrollToPage()
+	})
+
+
+    scrollToPage()
+
+    $('.ring').click(function() {
+    	page = 1
+    	scrollToPage()
+    })
+
+	function scrollToPage() {
+		$('.page-' + page + ' .toAnimate').addClass('d-none')
+		$('html, body').animate({scrollTop: $(window).height() * page}, 500, function() {
 			isScrolling = false
 			$('.navbar.fixed-bottom .nav-item').removeClass('active')
 			if (page >= 1) {
@@ -56,7 +68,7 @@ var pager = $(document).ready(function() {
 						
 			}
 		});
-	})
+	}
 
 	var navbar = $(document).scroll(function() {
 		const scroll = $(window).scrollTop();
@@ -75,6 +87,28 @@ var pager = $(document).ready(function() {
 			navbarTop.addClass('d-none')
 		}
 	})
+
+    $('.navbar.fixed-bottom .nav-item .nav-link').click(function(event){
+
+        //prevent the default action for the click event
+        event.preventDefault();
+
+        //get the full url - like mysitecom/index.htm#home
+        var full_url = this.href;
+
+        //split the url by # and get the anchor target name - home in mysitecom/index.htm#home
+        var parts = full_url.split('#');
+        var trgt = '.' + parts[1];
+        page = parts[1].split('-')[1]
+        //get the top offset of the target anchor
+        // var target_offset = $(trgt).offset();
+        // var target_top = target_offset.top;
+        //goto that anchor by setting the body scroll top to anchor Itop
+        // $('html, body').animate({scrollTop: target_top}, 500, function() {
+
+        // });
+        scrollToPage()
+    });
 })
 
 $(document).ready(function() {
@@ -82,9 +116,9 @@ $(document).ready(function() {
 })
 var splash = {
 	constants: {
-		splashDuration: 6000,
-		quoteDelay: 2500,
-		typewriterDelay: 300
+		splashDuration: .6000,
+		quoteDelay: .2500,
+		typewriterDelay: .300
 	},
 	animateQuote: function() {
 		$('.splash .coffee .coffee-fill').addClass('full')
