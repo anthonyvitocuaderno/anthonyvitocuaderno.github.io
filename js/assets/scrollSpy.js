@@ -2,7 +2,6 @@
 
 
 var pager = $(document).ready(function() {
-
 	
 	const pages = $('.page').length
 	var scroll = 0
@@ -11,6 +10,7 @@ var pager = $(document).ready(function() {
 	// const pageBar = $('.fixed-bottom.page-bar')
 
 	var pageAnimation = $(document).bind('mousewheel', function(e){
+
 		const delta = e.originalEvent.wheelDelta
 		// scroll = clamp(scroll - e.originalEvent.wheelDelta, 0, $(window).height())
 		// pageBar.width($(window).width() * scroll / $(window).height())
@@ -37,13 +37,33 @@ var pager = $(document).ready(function() {
     })
 
 	function scrollToPage() {
+		var speed = 500
+		if ($(window).width() < 768) {
+
+			$('html, body').animate({scrollTop: $(window).height() * page}, speed)
+
+			isScrolling = false
+			$('.navbar.fixed-bottom .nav-item').removeClass('active')
+			if (page >= 1) {
+				$($('.navbar.fixed-bottom .nav-item')[page - 1]).addClass('active')
+				setTimeout(function() {
+				$(document).mousemove()
+
+				}, 200)
+			}
+			return
+		}
+
+
 		$('.page-' + page + ' .toAnimate').addClass('d-none')
-		$('html, body').animate({scrollTop: $(window).height() * page}, 500, function() {
+		$('html, body').animate({scrollTop: $(window).height() * page}, speed, function() {
 			isScrolling = false
 			$('.navbar.fixed-bottom .nav-item').removeClass('active')
 			if (page >= 1) {
 				$($('.navbar.fixed-bottom .nav-item')[page - 1]).addClass('active')
 				$('.page-' + page + ' .parallax').addClass('show')
+
+
 				$('.page-' + page + ' .toAnimate.fromLeft').removeClass('d-none').addClass('animated fadeInLeft')
 				$('.page-' + page + ' .toAnimate.fromRight').removeClass('d-none').addClass('animated fadeInRight')
 				$('.page-' + page + ' .toAnimate.fromCenter').removeClass('d-none').addClass('animated fadeInDown')
@@ -53,9 +73,11 @@ var pager = $(document).ready(function() {
 	}
 
 	var navbar = $(document).scroll(function() {
+		if ($(window).width() < 768) {
+			return
+		}
 		const scroll = $(window).scrollTop();
 		const navbarBottom = $('.navbar.fixed-bottom') 
-
 		if(scroll > 0 && page == 1) {
 			navbarBottom.addClass('bg-dark')
 		} else {
@@ -90,5 +112,7 @@ var pager = $(document).ready(function() {
 
         // });
         scrollToPage()
+
+        $('.navbar.fixed-bottom .navbar-toggler').click()
     });
 })

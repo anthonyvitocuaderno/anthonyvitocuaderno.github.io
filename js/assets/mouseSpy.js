@@ -1,11 +1,18 @@
 $(document).ready(function() {
-
-	$(document).on('mousemove', function(e) {
-
+	var cursorFollow = function(e) {
 		var parallaxDampingX = 0.925
 		var parallaxDampingY = 0.90
 		var x = e.clientX
 		var y = e.clientY
+		if (y > $(window).height() * 0.75) {
+			return
+		}
+		if (!x) {
+			x = $(window).width() / 2
+		}
+		if (!y) {
+			y = $(window).height() / 2
+		}
 
 		var clearDarkenCooldown = true
 		if ($('.navbar.fixed-bottom .nav-item:nth-child(1)').hasClass('active')) {
@@ -33,7 +40,9 @@ $(document).ready(function() {
 
 		}
 		if ($('.navbar.fixed-bottom .nav-item:nth-child(2)').hasClass('active')) {
-			
+			if ($(window).width() < 768) {
+				return
+			}
 			var xPos = (x - ($(window).width())) - (x - ($(window).width() * 1.5 / 2)) * parallaxDampingX + 'px'
 			var yPos = (y - ($(window).height())) - (y - ($(window).height() * 1.5 / 2)) * parallaxDampingY + 'px'
 			const position = xPos + ' ' + yPos
@@ -41,5 +50,7 @@ $(document).ready(function() {
 			$('.page-2 .parallax').css('background-position', position);
 		}
 	
-	});
+	}
+
+	$(document).on('mousemove', cursorFollow);
 })

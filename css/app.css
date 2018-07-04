@@ -10,6 +10,15 @@
   100% {
     transform: rotate(-360deg); } }
 
+@media (max-width: 767px) {
+  body {
+    background-attachment: fixed;
+    background-position: 50 0;
+    background-size: 100% auto; }
+  .btn-primary-outline {
+    border-color: #cccccc !important;
+    color: #cccccc !important; } }
+
 body.scroll-locked {
   overflow-y: hidden;
   height: 100vh !important;
@@ -23,11 +32,11 @@ body.scroll-locked {
   /* optional: just make scrollbar invisible */ }
 
 /* optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb g {
   background: #FF0000; }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   color: #272333;
   background-color: #121212;
   background-image: url("https://i.pinimg.com/originals/d3/38/a5/d338a5a9be008a9d7e7fe3b85dc2a3fb.png");
@@ -47,13 +56,24 @@ a {
   color: #a02c2c !important; }
 
 .navbar.fixed-bottom {
-  background: linear-gradient(transparent, black); }
+  overflow-x: hidden !important;
+  background: linear-gradient(transparent, black);
+  z-index: 1031 !important;
+  position: fixed !important;
+  bottom: 0;
+  width: 100vw !important; }
+
+@media (max-width: 767px) {
+  .navbar.fixed-bottom {
+    background: linear-gradient(black, black); } }
 
 .navbar.fixed-bottom.bg-dark {
   background: linear-gradient(black, black); }
 
 .page {
-  height: 100vh; }
+  height: 100vh !important;
+  width: 100vw !important;
+  position: relative; }
   .page .heading {
     color: #d35f5f;
     text-transform: uppercase;
@@ -66,12 +86,16 @@ a {
     padding-bottom: 0.5rem;
     padding-right: 2rem;
     display: inline-block; }
-    .page .subheading:hover {
-      padding-right: 5rem; }
+    @media (min-width: 768px) {
+      .page .subheading:hover {
+        padding-right: 5rem; } }
 
 .page-1 {
   background-color: rgba(0, 0, 0, 0.35);
   color: white; }
+  @media (max-width: 767px) {
+    .page-1 {
+      background-color: #121212; } }
   .page-1 .parallax {
     background-position: center;
     background-repeat: no-repeat;
@@ -80,12 +104,19 @@ a {
     height: 100vh;
     position: absolute; }
   .page-1 .clear {
+    overflow: hidden;
     height: 20vh;
     transition: 2s ease background-color;
     background-color: #cccccc; }
+    @media (max-width: 767px) {
+      .page-1 .clear {
+        height: 0; }
+        .page-1 .clear .message {
+          display: none; } }
     .page-1 .clear .message {
       color: #cccccc; }
     .page-1 .clear .ring {
+      display: none;
       opacity: 0;
       transition: 1s ease-out all;
       cursor: pointer;
@@ -111,12 +142,16 @@ a {
   .page-1 .clear.darken {
     background-color: black; }
     .page-1 .clear.darken .ring {
+      display: block;
       opacity: 0.5; }
     .page-1 .clear.darken .ring.dashed {
       box-shadow: 0px 0px 150px white; }
   .page-1 .container {
     z-index: 2;
     height: calc(60vh - 56px); }
+    @media (max-width: 767px) {
+      .page-1 .container {
+        height: calc(90vh - 56px); } }
 
 .page-2 {
   color: white;
@@ -131,6 +166,11 @@ a {
     width: 100vw;
     height: 100vh;
     position: absolute; }
+    @media (max-width: 767px) {
+      .page-2 .parallax {
+        opacity: 1;
+        background-size: cover;
+        background-attachment: fixed; } }
   .page-2 .parallax.show {
     opacity: 1; }
 

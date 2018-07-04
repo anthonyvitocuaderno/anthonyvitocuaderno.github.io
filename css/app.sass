@@ -13,6 +13,8 @@ $background-color: #121212
 $white-50: darken(white, 20%)
 $dark-blue-green: #111c21
 
+$breakpoint-tablet: 768px
+
 @keyframes spin-clockwise
 	0%
 		transform: rotate(0deg)
@@ -27,6 +29,14 @@ $dark-blue-green: #111c21
 		transform: rotate(-360deg)
   
 
+@media (max-width: $breakpoint-tablet - 1)
+	body
+		background-attachment: fixed
+		background-position: 50 0
+		background-size: 100% auto
+	.btn-primary-outline
+		border-color: $white-50!important
+		color: $white-50!important
 
 body.scroll-locked
 	overflow-y: hidden
@@ -37,11 +47,10 @@ body.scroll-locked
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
 /* optional: show position indicator in red */
-::-webkit-scrollbar-thumb
+::-webkit-scrollbar-thumb g
     background: #FF0000;
-
 body
-	overflow-x: hidden
+	overflow-x: hidden!important
 	color: $dark-color
 	background-color: $background-color
 	background-image: url("https://i.pinimg.com/originals/d3/38/a5/d338a5a9be008a9d7e7fe3b85dc2a3fb.png")
@@ -59,11 +68,21 @@ a
 .text-primary
 	color: $primary-color!important
 .navbar.fixed-bottom
+	overflow-x: hidden!important
 	background: linear-gradient(transparent, black)
+	z-index: 1031!important
+	position: fixed!important
+	bottom: 0
+	width: 100vw!important
+@media (max-width: $breakpoint-tablet - 1)
+	.navbar.fixed-bottom
+		background: linear-gradient(black, black)
 .navbar.fixed-bottom.bg-dark
 	background: linear-gradient(black, black)
 .page
-	height: 100vh
+	height: 100vh!important
+	width: 100vw!important
+	position: relative
 	.heading
 		color: $primary-color-lighter
 		text-transform: uppercase
@@ -76,11 +95,15 @@ a
 		padding-bottom: 0.5rem
 		padding-right: 2rem
 		display: inline-block
-		&:hover
-			padding-right: 5rem
+
+		@media (min-width: $breakpoint-tablet)
+			&:hover
+				padding-right: 5rem
 .page-1
 	background-color: rgba(0, 0, 0, 0.35)
 	color: white
+	@media (max-width: $breakpoint-tablet - 1)
+		background-color: $background-color
 	
 	.parallax
 		// background-image: url("https://i.pinimg.com/originals/c6/3a/30/c63a307779ea82cca5bbcc38750bc96d.jpg")
@@ -91,12 +114,18 @@ a
 		height: 100vh
 		position: absolute
 	.clear
+		overflow: hidden
 		height: 20vh
 		transition: 2s ease background-color
 		background-color: $white-50
+		@media (max-width: $breakpoint-tablet - 1)
+			height: 0
+			.message
+				display: none
 		.message
 			color: $white-50
 		.ring
+			display: none
 			opacity: 0
 			transition: 1s ease-out all
 			cursor: pointer
@@ -123,12 +152,15 @@ a
 	.clear.darken
 		background-color: black
 		.ring
+			display: block
 			opacity: 0.5
 		.ring.dashed
 			box-shadow: 0px 0px 150px white
 	.container
 		z-index: 2
 		height: calc(60vh - 56px)
+		@media (max-width: $breakpoint-tablet - 1)
+			height: calc(90vh - 56px)
 .page-2
 	color: white
 	background-color: $dark-blue-green
@@ -142,6 +174,10 @@ a
 		width: 100vw
 		height: 100vh
 		position: absolute
+		@media (max-width: $breakpoint-tablet - 1)
+			opacity: 1
+			background-size: cover
+			background-attachment: fixed
 	.parallax.show
 		opacity: 1
 nav.fixed-top
