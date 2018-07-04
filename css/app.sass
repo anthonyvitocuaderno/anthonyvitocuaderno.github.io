@@ -12,6 +12,22 @@ $heading-font-size: 1.6rem
 $background-color: #121212
 $white-50: darken(white, 20%)
 $dark-blue-green: #111c21
+
+@keyframes spin-clockwise
+	0%
+		transform: rotate(0deg)
+
+	100%
+		transform: rotate(360deg)
+@keyframes spin-cclockwise
+	0%
+		transform: rotate(0deg)
+
+	100%
+		transform: rotate(-360deg)
+  
+
+
 body.scroll-locked
 	overflow-y: hidden
 	height: 100vh !important
@@ -33,6 +49,7 @@ body
 	background-position: center
 	background-repeat: no-repeat
 	background-size: cover
+
 a
 	text-decoration: none
 	color: inherit
@@ -46,7 +63,7 @@ a
 .navbar.fixed-bottom.bg-dark
 	background: linear-gradient(black, black)
 .page
-	min-height: 100vh
+	height: 100vh
 	.heading
 		color: $primary-color-lighter
 		text-transform: uppercase
@@ -62,15 +79,55 @@ a
 		&:hover
 			padding-right: 5rem
 .page-1
-	background-color: $dark-blue-green
+	background-color: rgba(0, 0, 0, 0.35)
 	color: white
+	
 	.parallax
+		// background-image: url("https://i.pinimg.com/originals/c6/3a/30/c63a307779ea82cca5bbcc38750bc96d.jpg")
 		background-position: center
 		background-repeat: no-repeat
 		background-size: 100% 100%
 		width: 100vw
 		height: 100vh
 		position: absolute
+	.clear
+		height: 20vh
+		transition: 2s ease background-color
+		background-color: $white-50
+		.ring
+			pointer-events: none
+			opacity: 0
+			transition: 1s ease-out all
+			cursor: pointer
+			width: 100px
+			position: absolute
+			animation: spin-clockwise 5s infinite
+			z-index: 1
+			border-radius: 50%
+		.ring.bladed-red
+			transition: 1.1s ease-out all
+			background-color: transparent
+			width: 60px
+			animation: spin-cclockwise 3s infinite
+		.ring.ring-75
+			transition: 1.2s ease-out all
+			width: 40px
+			animation: spin-clockwise 1s infinite
+		.ring.ring-50
+			transition: 1.3s ease-out all
+			width: 20px
+			position: absolute
+			animation: spin-cclockwise 1s infinite
+			
+	.clear.darken
+		background-color: black
+		.ring
+			opacity: 0.5
+		.ring.dashed
+			box-shadow: 0px 0px 150px white
+	.container
+		z-index: 2
+		height: calc(60vh - 56px)
 .page-2
 	color: white
 	background-color: $dark-blue-green
