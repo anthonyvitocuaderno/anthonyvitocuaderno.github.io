@@ -1,8 +1,8 @@
 var splash = {
 	constants: {
-		splashDuration: .6000,
-		quoteDelay: .2500,
-		typewriterDelay: .300
+		splashDuration: 6000,
+		quoteDelay: 2500,
+		typewriterDelay: 300
 	},
 	animateQuote: function() {
 		$('.splash .coffee .coffee-fill').addClass('full')
