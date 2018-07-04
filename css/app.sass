@@ -27,7 +27,12 @@ $breakpoint-tablet: 768px
 
 	100%
 		transform: rotate(-360deg)
-  
+@keyframes slide
+	0%
+		transform: translateX(0)
+
+	100%
+		transform: translateX(100vw)
 
 @media (max-width: $breakpoint-tablet - 1)
 	body
@@ -124,6 +129,22 @@ a
 				display: none
 		.message
 			color: $white-50
+		.panel-line
+			width: 100vw
+			height: 1px
+			background-color: $white-50
+			position: absolute
+			top: 10vh
+			z-index: 100
+
+		.panel-slider
+			width: 15px
+			height: 9px
+			background-color: $white-50
+			position: absolute
+			top: calc(10vh - 4px)
+			z-index: 100
+			animation: slide 10s infinite
 		.ring
 			display: none
 			opacity: 0
@@ -156,6 +177,9 @@ a
 			opacity: 0.5
 		.ring.dashed
 			box-shadow: 0px 0px 150px white
+		.panel-slider
+			background-color: $primary-color
+		
 	.container
 		z-index: 2
 		height: calc(60vh - 56px)

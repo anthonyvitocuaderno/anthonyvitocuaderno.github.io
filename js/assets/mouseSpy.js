@@ -23,9 +23,7 @@ $(document).ready(function() {
 					clearDarkenCooldown = true
 
 					$('.page-1 .clear').removeClass('darken')
-				}, 1000)
-			} else {
-				alert('cd')
+				}, 2000)
 			}
 
 			$('.page-1 .ring').removeClass('d-none')
