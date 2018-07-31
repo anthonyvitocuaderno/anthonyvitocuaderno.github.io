@@ -1,7 +1,22 @@
 $(document).ready(function() {
 	setTimeout(function() {
 		$('section.intro.splash').removeClass('splash')
-	}, 2000)
+	}, 1000)
+
+	// Automatic drops
+	var raindrops = setInterval(function() {
+		var $el = $('section.intro');
+		var x = Math.random() * $el.outerWidth();
+		var y = Math.random() * $el.outerHeight();
+		var dropRadius = 20;
+		var strength = 0.04 + Math.random() * 0.04;
+		$el.ripples('drop', x, y, dropRadius, strength);
+	}, 400);
+
+
+	setTimeout(function() {
+		clearInterval(raindrops)
+	}, 15000)
 
 	setTimeout(function() {
 		const firstName = 'ito'

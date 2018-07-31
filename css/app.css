@@ -7,12 +7,50 @@
 html {
   font-size: 12pt; }
 
-section {
-  overflow: hidden;
-  height: 100vh; }
-  section .banner {
+section.active {
+  left: 0 !important;
+  width: 100vw; }
+  section.active .banner {
     transition: 3s ease all;
-    width: 40vw;
+    width: 40vw; }
+
+section {
+  width: 0;
+  position: absolute !important;
+  top: 0;
+  overflow: hidden;
+  height: 100vh;
+  transition: 1s ease-out all; }
+  section header {
+    transition: 2.5s ease all;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    section header .bar-h {
+      background-color: #2c2c2c;
+      height: 1px;
+      top: 1rem;
+      width: calc(50vw - 80px);
+      position: absolute;
+      right: 75px; }
+    section header .links {
+      position: absolute;
+      right: 0;
+      border: 1px solid #929292; }
+      section header .links .fb, section header .links .linkedin {
+        padding: 0.25rem;
+        width: 30px;
+        margin: 0;
+        display: inline-block;
+        text-align: center; }
+      section header .links .fb {
+        background-color: #929292;
+        color: #121212; }
+      section header .links .linkedin {
+        color: #929292; }
+  section .banner {
+    transition: 0.5s ease all;
+    width: 0vw;
     position: absolute;
     left: 10vw;
     top: 0;
@@ -123,33 +161,6 @@ section.intro {
         position: absolute;
         width: 50px;
         animation: 1s spin infinite ease-out reverse; }
-  section.intro header {
-    transition: 2.5s ease all;
-    position: absolute;
-    top: 0;
-    width: 100%; }
-    section.intro header .bar-h {
-      background-color: #2c2c2c;
-      height: 1px;
-      top: 1rem;
-      width: calc(50vw - 80px);
-      position: absolute;
-      right: 75px; }
-    section.intro header .links {
-      position: absolute;
-      right: 0;
-      border: 1px solid #929292; }
-      section.intro header .links .fb, section.intro header .links .linkedin {
-        padding: 0.25rem;
-        width: 30px;
-        margin: 0;
-        display: inline-block;
-        text-align: center; }
-      section.intro header .links .fb {
-        background-color: #929292;
-        color: #121212; }
-      section.intro header .links .linkedin {
-        color: #929292; }
   section.intro .banner .background {
     background-image: url("https://anthonyvitocuaderno.github.io/resume/img/banner-1.jpg");
     background-size: cover;
@@ -219,3 +230,39 @@ section.intro {
         height: 1px;
         width: 100%;
         background-color: #525252; }
+
+section.summary {
+  background-image: url("https://anthonyvitocuaderno.github.io/resume/img/banner-2.jpg");
+  background-size: cover;
+  background-position: center;
+  left: 100%;
+  background-color: #929292; }
+  section.summary header .links {
+    border: 1px solid #6c1616; }
+    section.summary header .links .fb {
+      background-color: #6c1616;
+      color: #929292; }
+    section.summary header .links .linkedin {
+      color: #6c1616; }
+  section.summary .title {
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 5rem;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    text-align: center; }
+    section.summary .title .back, section.summary .title .forward {
+      display: inline-block;
+      font-size: 3rem;
+      margin: 2rem; }
+      section.summary .title .back a, section.summary .title .forward a {
+        text-decoration: none;
+        color: #6c1616; }
+    section.summary .title .back {
+      position: absolute;
+      left: 0; }
+    section.summary .title .forward {
+      position: absolute;
+      right: 0; }

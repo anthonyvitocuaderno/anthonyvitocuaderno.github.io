@@ -20,12 +20,49 @@ $accent-lightest-color: lighten($accent-color, 50%)
 html
 	font-size: 12pt
 
-section
-	overflow: hidden
-	height: 100vh
+section.active
+	left: 0!important
+	width: 100vw
 	.banner
 		transition: 3s ease all
 		width: 40vw
+section
+	width: 0
+	position: absolute!important
+	top: 0
+	overflow: hidden
+	height: 100vh
+	transition: 1s ease-out all
+	header
+		transition: 2.5s ease all
+		position: absolute
+		top: 0
+		width: 100%
+		.bar-h
+			background-color: $accent-light-color
+			height: 1px
+			top: 1rem
+			width: calc(50vw - 80px)
+			position: absolute
+			right: 75px
+		.links
+			position: absolute
+			right: 0
+			border: 1px solid $accent-lightest-color
+			.fb, .linkedin
+				padding: 0.25rem
+				width: 30px
+				margin: 0
+				display: inline-block
+				text-align: center
+			.fb
+				background-color: $accent-lightest-color
+				color: $accent-color
+			.linkedin
+				color: $accent-lightest-color
+	.banner
+		transition: 0.5s ease all
+		width: 0vw
 		position: absolute
 		left: 10vw
 		top: 0
@@ -135,35 +172,6 @@ section.intro
 				width: 50px
 				animation: 1s spin infinite ease-out reverse
 
-
-	header
-		transition: 2.5s ease all
-		position: absolute
-		top: 0
-		width: 100%
-		.bar-h
-			background-color: $accent-light-color
-			height: 1px
-			top: 1rem
-			width: calc(50vw - 80px)
-			position: absolute
-			right: 75px
-		.links
-			position: absolute
-			right: 0
-			border: 1px solid $accent-lightest-color
-			.fb, .linkedin
-				padding: 0.25rem
-				width: 30px
-				margin: 0
-				display: inline-block
-				text-align: center
-			.fb
-				background-color: $accent-lightest-color
-				color: $accent-color
-			.linkedin
-				color: $accent-lightest-color
-
 	
 	.banner
 		.background
@@ -239,3 +247,42 @@ section.intro
 				height: 1px
 				width: 100%
 				background-color: $accent-lighter-color
+
+
+
+section.summary
+	background-image: url('https://anthonyvitocuaderno.github.io/resume/img/banner-2.jpg')
+	background-size: cover
+	background-position: center
+	left: 100%
+	background-color: $accent-lightest-color
+	header
+		.links
+			border: 1px solid $primary-dark-color
+			.fb
+				background-color: $primary-dark-color
+				color: $accent-lightest-color
+			.linkedin
+				color: $primary-dark-color
+	.title
+		font-weight: bold
+		letter-spacing: 3px
+		font-size: 5rem
+		position: absolute
+		bottom: 50%
+		left: 0
+		right: 0
+		text-align: center
+		.back, .forward
+			display: inline-block
+			font-size: 3rem
+			margin: 2rem
+			a
+				text-decoration: none
+				color: $primary-dark-color
+		.back
+			position: absolute
+			left: 0
+		.forward
+			position: absolute
+			right: 0
