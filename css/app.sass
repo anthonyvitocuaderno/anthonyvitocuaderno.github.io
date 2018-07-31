@@ -1,563 +1,149 @@
-$primary-color: #a02c2c
-$primary-color-lighter: lighten($primary-color, 20%)
-$dark-color: #272333
-$gray-color: #999
-$progress-fill-color: #dfdfdf
-$cup-color: white
-$boil-color: darken($primary-color, 30%)
-$ring-color: white
-$ring-width: 40vw
-$ring-rotate: rotateY(55deg) rotateX(-35deg) rotateZ(15deg)
-$heading-font-size: 1.6rem
-$background-color: #121212
-$white-50: darken(white, 20%)
-$dark-blue-green: #111c21
+$primary-color: #961f1f
+$primary-light-color: lighten($primary-color, 10%)
+$primary-lighter-color: lighten($primary-color, 25%)
+$primary-lightest-color: lighten($primary-color, 50%)
+$primary-dark-color: darken($primary-color, 10%)
+$primary-darker-color: darken($primary-color, 25%)
+$primary-darkest-color: darken($primary-color, 50%)
+$accent-color: #121212
+$accent-light-color: lighten($accent-color, 10%)
+$accent-lighter-color: lighten($accent-color, 25%)
+$accent-lightest-color: lighten($accent-color, 50%)
 
-$breakpoint-tablet: 768px
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
 
-@keyframes spin-clockwise
-	0%
-		transform: rotate(0deg)
+html
+	font-size: 12pt
 
-	100%
-		transform: rotate(360deg)
-@keyframes spin-cclockwise
-	0%
-		transform: rotate(0deg)
-
-	100%
-		transform: rotate(-360deg)
-@keyframes slide
-	0%
-		transform: translateX(0)
-
-	100%
-		transform: translateX(100vw)
-
-@media (max-width: $breakpoint-tablet - 1)
-	body
-		background-attachment: fixed
-		background-position: 50 0
-		background-size: 100% auto
-	.btn-primary-outline
-		border-color: $white-50!important
-		color: $white-50!important
-
-body.scroll-locked
-	overflow-y: hidden
-	height: 100vh !important
-	width: 100vw !important
-	pointer-events: none
-::-webkit-scrollbar
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-/* optional: show position indicator in red */
-::-webkit-scrollbar-thumb g
-    background: #FF0000;
-body
-	overflow-x: hidden!important
-	color: $dark-color
-	background-color: $background-color
-	background-image: url("https://i.pinimg.com/originals/d3/38/a5/d338a5a9be008a9d7e7fe3b85dc2a3fb.png")
-	background-attachment: fixed
-	background-position: center
-	background-repeat: no-repeat
-	background-size: cover
-
-a
-	text-decoration: none
-	color: inherit
-	outline: none
-	&:hover
-		text-decoration: none
-.text-primary
-	color: $primary-color!important
-.navbar.fixed-bottom
-	overflow-x: hidden!important
-	background: linear-gradient(transparent, black)
-	z-index: 1031!important
-	position: fixed!important
-	bottom: 0
-	width: 100vw!important
-@media (max-width: $breakpoint-tablet - 1)
-	.navbar.fixed-bottom
-		background: linear-gradient(black, black)
-.navbar.fixed-bottom.bg-dark
-	background: linear-gradient(black, black)
-.page
-	height: 100vh!important
-	width: 100vw!important
-	position: relative
-	.heading
-		color: $primary-color-lighter
-		text-transform: uppercase
-		margin-bottom: 2rem
-		padding-bottom: 1.5rem
-	.subheading
-		transition: 1s ease all
-		text-transform: uppercase
-		border-bottom: 1px solid $primary-color
-		padding-bottom: 0.5rem
-		padding-right: 2rem
-		display: inline-block
-
-		@media (min-width: $breakpoint-tablet)
-			&:hover
-				padding-right: 5rem
-.page-1
-	background-color: rgba(0, 0, 0, 0.35)
-	color: white
-	@media (max-width: $breakpoint-tablet - 1)
-		background-color: $background-color
-	
-	.parallax
-		// background-image: url("https://i.pinimg.com/originals/c6/3a/30/c63a307779ea82cca5bbcc38750bc96d.jpg")
-		background-position: center
-		background-repeat: no-repeat
-		background-size: 100% 100%
-		width: 100vw
-		height: 100vh
-		position: absolute
-	.clear
-		overflow: hidden
-		height: 20vh
-		transition: 2s ease background-color
-		background-color: $white-50
-		@media (max-width: $breakpoint-tablet - 1)
-			height: 0
-			.message
-				display: none
-		.message
-			color: $white-50
-		.panel-line
-			width: 100vw
-			height: 1px
-			background-color: $white-50
-			position: absolute
-			top: 10vh
-			z-index: 100
-
-		.panel-slider
-			width: 15px
-			height: 9px
-			background-color: $white-50
-			position: absolute
-			top: calc(10vh - 4px)
-			z-index: 100
-			animation: slide 10s infinite
-		.ring
-			display: none
-			opacity: 0
-			transition: 1s ease-out all
-			cursor: pointer
-			width: 100px
-			position: absolute
-			animation: spin-clockwise 5s infinite
-			z-index: 1
-			border-radius: 50%
-		.ring.bladed-red
-			transition: 1.1s ease-out all
-			background-color: transparent
-			width: 60px
-			animation: spin-cclockwise 3s infinite
-		.ring.ring-75
-			transition: 1.2s ease-out all
-			width: 40px
-			animation: spin-clockwise 1s infinite
-		.ring.ring-50
-			transition: 1.3s ease-out all
-			width: 20px
-			position: absolute
-			animation: spin-cclockwise 1s infinite
-			
-	.clear.darken
-		background-color: black
-		.ring
-			display: block
-			opacity: 0.5
-		.ring.dashed
-			box-shadow: 0px 0px 150px white
-		.panel-slider
-			background-color: $primary-color
-		
-	.container
-		z-index: 2
-		height: calc(60vh - 56px)
-		@media (max-width: $breakpoint-tablet - 1)
-			height: calc(90vh - 56px)
-.page-2
-	color: white
-	background-color: $dark-blue-green
-	.parallax
-		opacity: 0
-		transition: 1s ease opacity, 2s ease-out background-position
-		background-image: url("http://i-cdn.phonearena.com/images/articles/164286-image/20-low-poly-wallpapers.jpg")
-		background-position: center
-		background-repeat: no-repeat
-		background-size: 150vw auto
-		width: 100vw
-		height: 100vh
-		position: absolute
-		@media (max-width: $breakpoint-tablet - 1)
-			opacity: 1
-			background-size: cover
-			background-attachment: fixed
-	.parallax.show
-		opacity: 1
-nav.fixed-top
-	z-index: 1029
-	padding-left: 165px
-	a
-		font-size: 8pt
-		&:hover
-			border-bottom: 1px solid white
-			color: white
-	small
-		color: $white-50
-		margin-top: 0.5rem
-		width: calc(35% - 2rem)
-		text-align: left
-		cursor: pointer
-	.btns
-		display:
-		height: 38px
-		&:hover .hr
-			width: 5%
-		&:hover .vertical-rule
-			height: 5vh
-	.btn-primary
-		width: 5%
-		background-color: $primary-color
-		color: $dark-color
-		border-color: $primary-color
-		&:hover
-			background-color: $primary-color-lighter
-			border-color: $primary-color-lighter
-		a
-			&:hover
-				color: $dark-color
-				border-bottom: none
-
-	.btn-secondary
-		width: 5%
-		background-color: rgba(0, 0, 0, 0.15)
-		color: $primary-color
-		border-color: $primary-color
-		&:hover
-			border-color: $primary-color-lighter
-			color: $primary-color-lighter
-	.hr
-		transition: 1s ease all
-		margin: 1rem
-		display: inline-block
-		height: 1px
-		width: 55%
-		opacity: 0.5
-		background-color: $white-50
-	.vertical-rule
-		transition: 1s ease all
-		position: absolute
-		width: 1px
-		height: 60vh
-		background-color: $white-50
-		opacity: 0.5
-		right: 1rem
-		top: 40px
-		small
-			position: absolute
-			bottom: 0
-			transform: rotate(90deg) translateX(20px)
-			display: inline-block
-
-.btn-primary-outline
-	background-color: transparent !important
-	border: 1px solid $primary-color
-	color: $primary-color
-	border-radius: 0
-	border-top: none
-	border-left: none
-	a
-		color: inherit
-	&:hover
-		color: $primary-color-lighter
-		border-color: $primary-color-lighter
-
-.btn-secondary-outline
-	color: $white-50
-	background-color: transparent !important
-	border: 1px solid $white-50
-	border-radius: 0
-	border-top: none
-	border-left: none
-	&:hover
-		color: white
-		border-color: white
-
-
-.hero
-	color: darken(white, 10%)
-	padding-bottom: 30%
-	overflow: hidden
+section
 	height: 100vh
-	border-top: 1px solid $primary-color
-	// .fixed-bottom.page-bar
-	// 	height: 50px
-	// 	background-color: darken($primary-color, 10%)
-	// 	opacity: 0.8
-	// 	z-index: 999
-	// 	left: 0
+	.banner
+		width: 40vw
+		position: absolute
+		left: 10vw
+		top: 0
+		height: 100vh
+		overflow: hidden
+		.background
+			width: 150vw
+			height: 150vh
+			position: absolute
+			top: -25vh
+			left: -50vw
+		.overlay
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+	.content
+		position: absolute
+		left: 15vw
+		top: 10vh
+	footer
+		position: absolute
+		bottom: 5vh
+		height: 10vh
+		width: 100vw
+section.intro
+	background-color: $accent-color
+
+	header
+		position: absolute
+		top: 0
+		width: 100%
+		.bar-h
+			background-color: $accent-light-color
+			height: 1px
+			top: 1rem
+			width: calc(50vw - 80px)
+			position: absolute
+			right: 75px
+		.links
+			position: absolute
+			right: 0
+			border: 1px solid $accent-lightest-color
+			.fb, .linkedin
+				padding: 0.25rem
+				width: 30px
+				margin: 0
+				display: inline-block
+				text-align: center
+			.fb
+				background-color: $accent-lightest-color
+				color: $accent-color
+			.linkedin
+				color: $accent-lightest-color
+
+	
+	.banner
+		.background
+			background-image: url('/img/banner-1.jpg')
+			background-size: cover
+			background-position: center
+			animation: 300s spin infinite
+		.overlay
+			background-color: $primary-light-color
+			opacity: 0.1
 	
 	.overlay
+		background: linear-gradient(rgba(0, 0, 0, 0.15), transparent, rgba(0, 0, 0, 0.25));
+		height: 100%
 		position: absolute
-		top: 1px
-		height: 45vh
-		width: 100vw
-		background: linear-gradient(black, transparent)
-	.btn
-		margin-top: 1rem
-		font-size: 0.8rem
-	.btn-secondary-outline
-		margin-left: 1rem
-	.title
-		font-weigt: bold
-		text-transform: text-uppercase
-
-		.accent
-			color: $primary-color
-	.sub-title
-		display: inline-block
-		border-top: 1px solid $primary-color
-		padding-top: 0.5rem
-
-	.ring
-		cursor: pointer
-		-webkit-transform: $ring-rotate
-		transform: $ring-rotate
-		position: absolute
-		margin: auto
-		bottom: 30vh
 		left: 0
 		right: 0
-		opacity: 0.25
-		&:hover .ring-blade
-			-webkit-transform: rotate(60deg)
-			transform: rotate(60deg)
-		&:hover .ring-dashed
-			-webkit-transform: translateZ(200px) rotate(-120deg)
-			transform: translateZ(200px) rotate(-120deg)
-		&:hover .ring-blade-2
-			-webkit-transform: translateZ(200px) rotate(120deg)
-			transform: translateZ(200px) rotate(120deg)
-		&:hover .ring-75
-			-webkit-transform: translateZ(400px) rotate(45deg)
-			transform: translateZ(400px) rotate(45deg)
-		&:hover .ring-thin
-			-webkit-transform: translateZ(600px) rotate(120deg)
-			transform: translateZ(600px) rotate(120deg)
-		&:hover .ring-thin-2
-			-webkit-transform: translateZ(600px) rotate(-120deg)
-			transform: translateZ(600px) rotate(-120deg)
-		&:hover .ring-thin-3
-			-webkit-transform: translateZ(600px) rotate(120deg)
-			transform: translateZ(600px) rotate(120deg)
-		.ring-component
-			position: absolute
-			width: $ring-width
-			transition: 1s ease all
-		.ring-blade
-			margin: $ring-width*0.1
-			width: $ring-width*0.8
-			z-index: 10
-		.ring-dashed
-			-webkit-transform: translateX(200px)
-			transform: translateX(200px)
-			z-index: 9
-		.ring-blade-2
-			-webkit-transform: translateX(400px)
-			transform: translateX(400px)
-			margin: $ring-width*0.2
-			width: $ring-width*0.6
-			z-index: 8
-		.ring-75
-			-webkit-transform: translateX(400px)
-			transform: translateX(400px)
-			margin: $ring-width/4
-			width: $ring-width/2
-			z-index: 7
-		.ring-thin
-			-webkit-transform: translateX(600px)
-			transform: translateX(600px)
-			margin: $ring-width * 0.3
-			width: $ring-width * 0.4
-			z-index: 6
-		.ring-thin-2
-			-webkit-transform: translateX(600px)
-			transform: translateX(600px) rotate(180deg)
-			margin: $ring-width * 0.35
-			width: $ring-width * 0.3
-			z-index: 6
-		.ring-thin-3
-			-webkit-transform: translateX(600px)
-			transform: translateX(600px) rotate(45deg)
-			margin: $ring-width * 0.4
-			width: $ring-width * 0.2
-			z-index: 6
-		.ring-circle
-			-webkit-transform: translateX(550px)
-			transform: translateX(550px)
-			width: $ring-width * 0.05
-			height: $ring-width * 0.05
-			margin: $ring-width * 0.475
-			transform-origin: 0 50%
-			border-radius: 50%
-			background-color: $primary-color
-			z-index: 11
 
-	
-.splash.end 
-	pointer-events: none
-	opacity: 0
-	transition: 1.5s ease all
-
-.splash 
-	color: white
-	background-image: url("http://i-cdn.phonearena.com/images/articles/164286-image/20-low-poly-wallpapers.jpg")
-	background-attachment: fixed
-	background-color: $dark-color
-	height: 100vh
-	width: 100vw
-	position: fixed
-	z-index: 1030
-	letter-spacing: 2px
-	font-size: $heading-font-size
-	font-style: italic
-
-	.splash-heading
-		position: fixed
-		top: calc(50% - 250px)
-		text-align: center
-		opacity: 0.5
-
-	.progress-bar
-		position: fixed
-		top: 0
-		height: 4px
-		width: 100%
-		z-index: 1030
-		background-color: $progress-fill-color
-		border-bottom: 1px solid $gray-color
-
-		.fill
-			background-color: $boil-color
-			height: 4px
-			width: 0
-			transition: 7s ease all
-		.fill.percent-100
-			width: 100%
-
-	.coffee
-		text-align: center
-		position: relative
-
-		.coffee-cup 
-			display: inline-block
-			background-color: $cup-color
-			height: 150px
-			width: 200px
-			border-bottom-left-radius: 70px
-			border-bottom-right-radius: 70px
-
-			&:before
-				content: " "
-				height: 45px
-				width: 35px
-				background-color: $dark-color
-				display: block
-				margin-top: 25px
-				margin-left: 204px
-				border-top-right-radius: 50px
-				border-bottom-right-radius: 70px
-				position: absolute
-
-			&:after
-				content: " "
-				height: 75px
-				width: 50px
-				background-color: $cup-color
-				display: block
-				margin-top: 10px
-				margin-left: 204px
-				border-top-right-radius: 50px
-				border-bottom-right-radius: 70px
-
-
-		.coffee-fill
-			height: 70px
-			width: 180px
-			background-color: $dark-color
-			position: absolute
-			bottom: 24px
-			margin-left: 20px
-			border-bottom-left-radius: 70px
-			border-bottom-right-radius: 70px
-
-		.coffee-fill.full
-			transition: 1.5s ease all
-			height: 130px
-			background-color: $boil-color
-
-		.coffee-plate 
-			background-color: $cup-color
-			height: 4px
-			width: 220px
-			border-radius: 4px
-
-		.quote
-			position: fixed
-			display: block
-			left: 0
-			right: 0
-			top: calc(50% - 75px)
-			width: 100%
-			opacity: 0
-		
-
-		.quote-part-2 .text,
-		.quote .text
-			opacity: 0
-
-		.quote.smoke-up
-			top: calc(50% - 155px)
-			transition: 2s ease all
-			opacity: 1
-
-		.quote-part-2.smoke-up .text,
-		.quote.smoke-up .text
-			transition: 10s ease all
-			opacity: 1
-
-		.quote-part-2
-			position: fixed
-			display: block
-			left: 0
-			right: 0
-			top: calc(50% - 125px)
-			letter-spacing: 2px
-			font-size: 1.6rem
-			width: 100%
-
-
-		&:after
-			content: ""
-			display: block
+	.content
+		h3
 			letter-spacing: 1px
-			background-color: $cup-color
-			height: 4px
-			width: 180px
-			margin-left: 20px
-			border-bottom-left-radius: 4px
-			border-bottom-right-radius: 4px
+			color: $accent-lightest-color
+			font-size: 1rem
+			.emphasis
+				color: $primary-color
+		h1
+			letter-spacing: -5px
+			color: $accent-lightest-color
+			font-size: 5.5rem
+			font-weight: bold
 
-
-
-
+	footer
+		letter-spacing: 2px
+		color: white
+		.left
+			left: 20vw
+			width: 40vw
+			position: absolute
+			height: 100%
+			i.fa
+				width: 25px
+			small
+				font-size: 0.75rem
+			a
+				color: white
+				text-decoration: none
+				&:hover
+					color: $primary-lightest-color
+		.right
+			width: 20vw
+			position: absolute
+			right: 0
+			height: 100%
+			.explore
+				color: $accent-lightest-color
+				font-size: 1.25rem
+				padding-bottom: 0.5rem
+				display: inline-block
+				text-decoration: none
+				transition: 0.5s ease all
+				width: 0
+				&:hover
+					border-bottom: 1px solid $accent-lightest-color
+					width: 100%
+			.underline
+				height: 1px
+				width: 100%
+				background-color: $accent-lighter-color
