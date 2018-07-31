@@ -237,13 +237,16 @@ section.summary {
   background-position: center;
   left: 100%;
   background-color: #929292; }
-  section.summary header .links {
-    border: 1px solid #6c1616; }
-    section.summary header .links .fb {
-      background-color: #6c1616;
-      color: #929292; }
-    section.summary header .links .linkedin {
-      color: #6c1616; }
+  section.summary .overlay.darken {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent, rgba(0, 0, 0, 0.8));
+    opacity: 0.5; }
+  section.summary .overlay {
+    transition: 0.2s ease all;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.15; }
+  section.summary header .bar-h {
+    background-color: #929292; }
   section.summary .title {
     font-weight: bold;
     letter-spacing: 3px;
@@ -259,10 +262,14 @@ section.summary {
       margin: 2rem; }
       section.summary .title .back a, section.summary .title .forward a {
         text-decoration: none;
-        color: #6c1616; }
+        color: #929292; }
+        section.summary .title .back a:hover, section.summary .title .forward a:hover {
+          color: white; }
     section.summary .title .back {
       position: absolute;
       left: 0; }
+      section.summary .title .back a {
+        color: #121212; }
     section.summary .title .forward {
       position: absolute;
       right: 0; }

@@ -256,14 +256,17 @@ section.summary
 	background-position: center
 	left: 100%
 	background-color: $accent-lightest-color
+	.overlay.darken
+		background: linear-gradient(to right, rgba(0, 0, 0, 0.8) , transparent, rgba(0, 0, 0, 0.8));
+		opacity: 0.5
+	.overlay
+		transition: 0.2s ease all
+		height: 100vh
+		width: 100vw
+		opacity: 0.15
 	header
-		.links
-			border: 1px solid $primary-dark-color
-			.fb
-				background-color: $primary-dark-color
-				color: $accent-lightest-color
-			.linkedin
-				color: $primary-dark-color
+		.bar-h
+			background-color: $accent-lightest-color
 	.title
 		font-weight: bold
 		letter-spacing: 3px
@@ -279,10 +282,14 @@ section.summary
 			margin: 2rem
 			a
 				text-decoration: none
-				color: $primary-dark-color
+				color: $accent-lightest-color
+				&:hover
+					color: white
 		.back
 			position: absolute
 			left: 0
+			a
+				color: $accent-color
 		.forward
 			position: absolute
 			right: 0
