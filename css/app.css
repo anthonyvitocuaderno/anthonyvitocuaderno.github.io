@@ -67,7 +67,7 @@ section.intro {
       section.intro header .links .linkedin {
         color: #929292; }
   section.intro .banner .background {
-    background-image: url("../img/banner-1.jpg");
+    background-image: url("https://anthonyvitocuaderno.github.io/resume/img/banner-1.jpg");
     background-size: cover;
     background-position: center;
     animation: 300s spin infinite; }
