@@ -10,6 +10,7 @@ $accent-light-color: lighten($accent-color, 10%)
 $accent-lighter-color: lighten($accent-color, 25%)
 $accent-lightest-color: lighten($accent-color, 50%)
 
+
 @keyframes spin
   0%
     transform: rotate(0deg)
@@ -20,8 +21,10 @@ html
 	font-size: 12pt
 
 section
+	overflow: hidden
 	height: 100vh
 	.banner
+		transition: 3s ease all
 		width: 40vw
 		position: absolute
 		left: 10vw
@@ -49,10 +52,92 @@ section
 		bottom: 5vh
 		height: 10vh
 		width: 100vw
+
+section.intro.splash
+	
+	.banner
+		width: 100vw
+		left: 0
+	.overlay
+		background: black
+
+	.brand
+		opacity: 1
+	header
+		transform: translate(100%, 0)
+	footer
+		.left
+			left: -100%
+		.right
+			right: -100%
+	.content
+		h3
+			transform: translate(-1500px, 0)
+		h1
+			transform: translate(-1500px, 0)
 section.intro
+
 	background-color: $accent-color
+	.brand
+		font-size: 2rem
+		transition: 2s ease all
+		opacity: 0
+		width: 100%
+		z-index: 999
+		color: $accent-lightest-color
+		position: absolute
+		left: 0
+		right: 0
+		text-align: center
+		top: 50vh
+		.emphasis
+			color: $primary-color
+		.ring
+			width: 100%
+			text-align: center
+			position: relative
+			transform: scale(0.75)
+			opacity: 0.5
+			img.blade
+				top: calc(50% - 75px)
+				left: calc(50% - 75px)
+				position: absolute
+				width: 150px
+				animation: 1.5s spin infinite ease-out
+			img.colored
+				top: calc(50% - 50px)
+				left: calc(50% - 50px)
+				position: absolute
+				animation: 1.5s spin infinite ease-out reverse
+				width: 100px
+			img.dashed
+				top: calc(50% - 65px)
+				left: calc(50% - 65px)
+				position: absolute
+				width: 130px
+				animation: 3s spin infinite ease-out
+			img.part
+				top: calc(50% - 40px)
+				left: calc(50% - 40px)
+				position: absolute
+				width: 80px
+				animation: 2s spin infinite ease-out reverse
+			img.thin
+				top: calc(50% - 30px)
+				left: calc(50% - 30px)
+				position: absolute
+				width: 60px
+				animation: 1s spin infinite ease-out
+			img.thin-sm
+				top: calc(50% - 25px)
+				left: calc(50% - 25px)
+				position: absolute
+				width: 50px
+				animation: 1s spin infinite ease-out reverse
+
 
 	header
+		transition: 2.5s ease all
 		position: absolute
 		top: 0
 		width: 100%
@@ -91,6 +176,7 @@ section.intro
 			opacity: 0.1
 	
 	.overlay
+		transition: 3s ease all
 		background: linear-gradient(transparent, rgba(0, 0, 0, 0.25));
 		height: 100%
 		position: absolute
@@ -99,6 +185,7 @@ section.intro
 
 	.content
 		h3
+			transition: 1s ease all
 			letter-spacing: 1px
 			text-shadow: black 1px 1px 1px;
 			color: $accent-lightest-color
@@ -106,6 +193,7 @@ section.intro
 			.emphasis
 				color: $primary-color
 		h1
+			transition: 1.5s ease all
 			letter-spacing: -5px
 			color: $accent-lightest-color
 			font-size: 5.5rem
@@ -116,6 +204,7 @@ section.intro
 		letter-spacing: 2px
 		color: white
 		.left
+			transition: 1.75s ease all
 			left: 20vw
 			width: 40vw
 			position: absolute
@@ -130,6 +219,7 @@ section.intro
 				&:hover
 					color: $primary-lightest-color
 		.right
+			transition: 2.25s ease all
 			width: 20vw
 			position: absolute
 			right: 0

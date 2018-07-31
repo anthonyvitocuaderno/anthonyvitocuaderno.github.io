@@ -8,8 +8,10 @@ html {
   font-size: 12pt; }
 
 section {
+  overflow: hidden;
   height: 100vh; }
   section .banner {
+    transition: 3s ease all;
     width: 40vw;
     position: absolute;
     left: 10vw;
@@ -38,9 +40,91 @@ section {
     height: 10vh;
     width: 100vw; }
 
+section.intro.splash .banner {
+  width: 100vw;
+  left: 0; }
+
+section.intro.splash .overlay {
+  background: black; }
+
+section.intro.splash .brand {
+  opacity: 1; }
+
+section.intro.splash header {
+  transform: translate(100%, 0); }
+
+section.intro.splash footer .left {
+  left: -100%; }
+
+section.intro.splash footer .right {
+  right: -100%; }
+
+section.intro.splash .content h3 {
+  transform: translate(-1500px, 0); }
+
+section.intro.splash .content h1 {
+  transform: translate(-1500px, 0); }
+
 section.intro {
   background-color: #121212; }
+  section.intro .brand {
+    font-size: 2rem;
+    transition: 2s ease all;
+    opacity: 0;
+    width: 100%;
+    z-index: 999;
+    color: #929292;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 50vh; }
+    section.intro .brand .emphasis {
+      color: #961f1f; }
+    section.intro .brand .ring {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      transform: scale(0.75);
+      opacity: 0.5; }
+      section.intro .brand .ring img.blade {
+        top: calc(50% - 75px);
+        left: calc(50% - 75px);
+        position: absolute;
+        width: 150px;
+        animation: 1.5s spin infinite ease-out; }
+      section.intro .brand .ring img.colored {
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        position: absolute;
+        animation: 1.5s spin infinite ease-out reverse;
+        width: 100px; }
+      section.intro .brand .ring img.dashed {
+        top: calc(50% - 65px);
+        left: calc(50% - 65px);
+        position: absolute;
+        width: 130px;
+        animation: 3s spin infinite ease-out; }
+      section.intro .brand .ring img.part {
+        top: calc(50% - 40px);
+        left: calc(50% - 40px);
+        position: absolute;
+        width: 80px;
+        animation: 2s spin infinite ease-out reverse; }
+      section.intro .brand .ring img.thin {
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        position: absolute;
+        width: 60px;
+        animation: 1s spin infinite ease-out; }
+      section.intro .brand .ring img.thin-sm {
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        position: absolute;
+        width: 50px;
+        animation: 1s spin infinite ease-out reverse; }
   section.intro header {
+    transition: 2.5s ease all;
     position: absolute;
     top: 0;
     width: 100%; }
@@ -75,12 +159,14 @@ section.intro {
     background-color: #c02828;
     opacity: 0.1; }
   section.intro .overlay {
+    transition: 3s ease all;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.25));
     height: 100%;
     position: absolute;
     left: 0;
     right: 0; }
   section.intro .content h3 {
+    transition: 1s ease all;
     letter-spacing: 1px;
     text-shadow: black 1px 1px 1px;
     color: #929292;
@@ -88,6 +174,7 @@ section.intro {
     section.intro .content h3 .emphasis {
       color: #961f1f; }
   section.intro .content h1 {
+    transition: 1.5s ease all;
     letter-spacing: -5px;
     color: #929292;
     font-size: 5.5rem;
@@ -97,6 +184,7 @@ section.intro {
     letter-spacing: 2px;
     color: white; }
     section.intro footer .left {
+      transition: 1.75s ease all;
       left: 20vw;
       width: 40vw;
       position: absolute;
@@ -111,6 +199,7 @@ section.intro {
         section.intro footer .left a:hover {
           color: #f2c2c2; }
     section.intro footer .right {
+      transition: 2.25s ease all;
       width: 20vw;
       position: absolute;
       right: 0;
