@@ -1,3 +1,25 @@
+@keyframes bouncy {
+  0% {
+    transform: translate(0, 0); }
+  70% {
+    transform: translate(0, 15px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes slideRight {
+  0% {
+    transform: translate(0, 0); }
+  70% {
+    transform: translate(15px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+.btn-scroll {
+  animation: 1s bouncy infinite;
+  display: inline-block !important; }
+  .btn-scroll:hover {
+    animation: 0.5s bouncy infinite; }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg); }
@@ -276,6 +298,9 @@ section.intro {
       right: 0;
       height: 100%; }
       section.intro footer .right .explore {
+        padding-top: 50vh;
+        margin-top: -50vh;
+        display: inline-block;
         color: #ababab;
         font-size: 1.25rem;
         padding-bottom: 0.5rem;
@@ -445,7 +470,8 @@ section.summary {
       section.summary .paper .btn-educ .left {
         display: none; }
       section.summary .paper .btn-educ .right {
-        display: inline-block; }
+        display: inline-block;
+        animation: 1s slideRight infinite; }
     section.summary .paper h2 {
       font-size: 1.25rem; }
     section.summary .paper p {

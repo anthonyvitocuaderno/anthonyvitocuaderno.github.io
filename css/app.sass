@@ -10,6 +10,26 @@ $accent-light-color: lighten($accent-color, 10%)
 $accent-lighter-color: lighten($accent-color, 25%)
 $accent-lightest-color: lighten($accent-color, 60%)
 
+@keyframes bouncy
+	0%
+		transform: translate(0, 0)
+	70%
+		transform: translate(0, 15px)
+	100%
+		transform: translate(0, 0)
+@keyframes slideRight
+	0%
+		transform: translate(0, 0)
+	70%
+		transform: translate(15px, 0)
+	100%
+		transform: translate(0, 0)
+
+.btn-scroll
+	animation: 1s bouncy infinite
+	display: inline-block!important
+	&:hover
+		animation: 0.5s bouncy infinite
 
 @keyframes spin
   0%
@@ -47,6 +67,7 @@ html
 		letter-spacing: 1px!important
 	.explore
 		display: none!important
+
 
 	section.active.splash
 		footer
@@ -299,6 +320,9 @@ section.intro
 			right: 0
 			height: 100%
 			.explore
+				padding-top: 50vh
+				margin-top: -50vh
+				display: inline-block
 				color: $accent-lightest-color
 				font-size: 1.25rem
 				padding-bottom: 0.5rem
@@ -471,6 +495,7 @@ section.summary
 				display: none
 			.right
 				display: inline-block
+				animation: 1s slideRight infinite
 		h2
 			font-size: 1.25rem
 		p
