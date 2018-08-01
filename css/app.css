@@ -5,14 +5,40 @@
     transform: rotate(360deg); } }
 
 html {
-  font-size: 12pt; }
+  font-size: 12pt;
+  background-color: #121212; }
+
+@keyframes travel {
+  0% {
+    left: 0; }
+  100% {
+    left: calc(100% - 14px); } }
+
+.panel-line {
+  opacity: 0.5;
+  width: 100%;
+  height: 1px;
+  background-color: #ababab;
+  position: absolute; }
+  .panel-line .particle {
+    background-color: #6c1616;
+    height: 7px;
+    width: 14px;
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    animation: 5s travel infinite; }
 
 section.active {
   left: 0 !important;
-  width: 100vw; }
+  width: 100%; }
   section.active .banner {
-    transition: 3s ease all;
+    transition: 1.5s ease all;
     width: 40vw; }
+  section.active .content h3 {
+    font-size: 1.5rem; }
+  section.active .content h1 {
+    font-size: 5.5rem; }
 
 section {
   width: 0;
@@ -21,6 +47,21 @@ section {
   overflow: hidden;
   height: 100vh;
   transition: 1s ease-out all; }
+  section .content h3 {
+    transition: 1s ease all;
+    letter-spacing: 1px;
+    text-shadow: black 1px 1px 1px;
+    color: #ababab;
+    font-size: 0; }
+    section .content h3 .emphasis {
+      color: #961f1f; }
+  section .content h1 {
+    transition: 1.5s ease all;
+    letter-spacing: -5px;
+    color: #ababab;
+    font-size: 0;
+    font-weight: bold;
+    text-shadow: black 1px 1px 1px; }
   section header {
     transition: 2.5s ease all;
     position: absolute;
@@ -36,7 +77,7 @@ section {
     section header .links {
       position: absolute;
       right: 0;
-      border: 1px solid #929292; }
+      border: 1px solid #ababab; }
       section header .links .fb, section header .links .linkedin {
         padding: 0.25rem;
         width: 30px;
@@ -44,10 +85,10 @@ section {
         display: inline-block;
         text-align: center; }
       section header .links .fb {
-        background-color: #929292;
+        background-color: #ababab;
         color: #121212; }
       section header .links .linkedin {
-        color: #929292; }
+        color: #ababab; }
   section .banner {
     transition: 0.5s ease all;
     width: 0vw;
@@ -111,7 +152,7 @@ section.intro {
     opacity: 0;
     width: 100%;
     z-index: 999;
-    color: #929292;
+    color: #ababab;
     position: absolute;
     left: 0;
     right: 0;
@@ -171,26 +212,10 @@ section.intro {
     opacity: 0.1; }
   section.intro .overlay {
     transition: 3s ease all;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.25));
     height: 100%;
     position: absolute;
     left: 0;
     right: 0; }
-  section.intro .content h3 {
-    transition: 1s ease all;
-    letter-spacing: 1px;
-    text-shadow: black 1px 1px 1px;
-    color: #929292;
-    font-size: 1rem; }
-    section.intro .content h3 .emphasis {
-      color: #961f1f; }
-  section.intro .content h1 {
-    transition: 1.5s ease all;
-    letter-spacing: -5px;
-    color: #929292;
-    font-size: 5.5rem;
-    font-weight: bold;
-    text-shadow: black 1px 1px 1px; }
   section.intro footer {
     letter-spacing: 2px;
     color: white; }
@@ -216,7 +241,7 @@ section.intro {
       right: 0;
       height: 100%; }
       section.intro footer .right .explore {
-        color: #929292;
+        color: #ababab;
         font-size: 1.25rem;
         padding-bottom: 0.5rem;
         display: inline-block;
@@ -224,48 +249,130 @@ section.intro {
         transition: 0.5s ease all;
         width: 0; }
         section.intro footer .right .explore:hover {
-          border-bottom: 1px solid #929292;
+          border-bottom: 1px solid #ababab;
           width: 100%; }
       section.intro footer .right .underline {
         height: 1px;
         width: 100%;
         background-color: #525252; }
 
+section.summary.active.scrolled .left {
+  top: 5vh; }
+
+section.summary.active.scrolled .title {
+  position: fixed;
+  top: 0; }
+  section.summary.active.scrolled .title .text {
+    font-size: 2rem;
+    opacity: 0; }
+
+section.summary.active.scrolled .panel-line.one {
+  top: 1rem;
+  width: calc(100% - 70px); }
+
+section.summary.active.scrolled .panel-line.two {
+  top: calc(100vh - 1rem); }
+
+section.summary.active.scrolled .skills {
+  left: 15vw;
+  width: 25vw; }
+
+section.summary.active .panel-line {
+  position: fixed; }
+
+section.summary.active header {
+  position: fixed; }
+
 section.summary {
+  height: auto;
+  overflow-x: hidden;
   background-image: url("https://anthonyvitocuaderno.github.io/resume/img/banner-2.jpg");
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   left: 100%;
-  background-color: #929292; }
+  background-color: #ababab; }
+  section.summary .skills {
+    transition: 1s ease all;
+    position: fixed;
+    left: -100vw;
+    top: 20vh; }
+    section.summary .skills h5 {
+      color: #961f1f;
+      font-size: 1rem; }
+    section.summary .skills li {
+      font-size: 0.75rem; }
+  section.summary .panel-line {
+    transition: 1s ease all; }
+  section.summary .panel-line.one {
+    top: calc(40vh - 5rem); }
+    section.summary .panel-line.one .particle {
+      animation: 5s travel infinite; }
+  section.summary .panel-line.two {
+    top: calc(40vh + 3rem); }
+    section.summary .panel-line.two .particle {
+      animation: 5s travel infinite reverse; }
+  section.summary .panel-line.three {
+    top: 0;
+    left: -40%;
+    transform: rotateZ(90deg); }
+    section.summary .panel-line.three .particle {
+      animation: 5s travel infinite; }
   section.summary .overlay.darken {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent, transparent);
     opacity: 0.5; }
   section.summary .overlay {
     transition: 0.2s ease all;
-    height: 100vh;
-    width: 100vw;
-    opacity: 0.15; }
+    height: 100%;
+    width: 100%;
+    opacity: 0.15;
+    position: absolute; }
   section.summary header .bar-h {
-    background-color: #929292; }
+    background-color: #ababab; }
+  section.summary header .left {
+    transition: 1s ease all;
+    position: absolute;
+    left: 15vw;
+    top: 10vh;
+    font-size: 1.25rem; }
+    section.summary header .left .name {
+      border-bottom: 1px solid #961f1f;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: block; }
+    section.summary header .left .emphasis {
+      color: #961f1f;
+      font-weight: bold; }
   section.summary .title {
+    transition: 1s ease all;
+    z-index: 1;
     font-weight: bold;
     letter-spacing: 3px;
     font-size: 5rem;
     position: absolute;
-    bottom: 50%;
+    top: calc(40vh - 5rem);
     left: 0;
     right: 0;
     text-align: center; }
+    section.summary .title .text {
+      z-index: 1;
+      transition: 1s ease all; }
+    section.summary .title p {
+      font-size: 1rem;
+      width: 70%;
+      margin-left: 15%;
+      margin-top: 2rem; }
     section.summary .title .back, section.summary .title .forward {
       display: inline-block;
       font-size: 3rem;
       margin: 2rem; }
       section.summary .title .back a, section.summary .title .forward a {
         text-decoration: none;
-        color: #929292; }
+        color: #ababab; }
         section.summary .title .back a:hover, section.summary .title .forward a:hover {
           color: white; }
     section.summary .title .back {
+      z-index: 2;
       position: absolute;
       left: 0; }
       section.summary .title .back a {
@@ -273,3 +380,27 @@ section.summary {
     section.summary .title .forward {
       position: absolute;
       right: 0; }
+  section.summary .paper {
+    padding: calc(10vh - 1px) 2rem;
+    border-top: calc(1rem + 1px) solid #961f1f;
+    position: relative;
+    margin-top: 100vh;
+    z-index: 100 !important;
+    margin-left: 35vw;
+    width: 65vw;
+    min-height: 100vh;
+    background-color: white; }
+    section.summary .paper p {
+      margin-bottom: 0.5rem; }
+    section.summary .paper aside {
+      padding: 1rem;
+      text-align: center;
+      font-size: 1rem;
+      position: absolute;
+      left: -25vw;
+      bottom: 0;
+      width: 25vw;
+      background-color: #961f1f; }
+      section.summary .paper aside a {
+        text-decoration: none;
+        color: white; }
