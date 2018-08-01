@@ -4,6 +4,13 @@ $(document).ready(function() {
 		gotoPage('summary')
 	})
 	$('.to-home').click(function() {
+		if ($(document).scrollTop() >= $(window).height() / 2) {
+
+			$('section.summary.active.scrolled').removeClass('scrolled')
+			$('html').animate({
+	            scrollTop: 0}, 200);
+			return
+		}
 		gotoPage('intro')
 	})
 
