@@ -343,13 +343,21 @@ section.summary.active .panel-line {
 section.summary.active header {
   position: fixed; }
 
+@keyframes zooming {
+  0% {
+    background-size: 200vw; }
+  70% {
+    background-size: 300vw; }
+  100% {
+    background-size: 200vw; } }
+
 section.summary {
   height: auto;
   overflow-x: hidden;
   background-image: url("https://anthonyvitocuaderno.github.io/resume/img/banner-2.jpg");
-  background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
+  animation: 120s zooming infinite;
   left: 100%;
   background-color: #ababab; }
   section.summary .skills {
