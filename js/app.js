@@ -90,4 +90,9 @@ $(document).ready(function() {
 		$('section.summary .overlay').removeClass('darken')
 	})
 
+	$('.btn-educ').click(function() {
+		$('.paper').toggleClass('page-2')
+		event.preventDefault()
+	})
+
 })

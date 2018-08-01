@@ -41,12 +41,49 @@ html
 		top: -3px
 		animation: 5s travel infinite
 
+@media screen and (max-width: 767px) 
+	h1
+		font-size: 3rem!important
+		letter-spacing: 1px!important
+	.explore
+		display: none!important
+
+	section.active.splash
+		footer
+			height: 115px!important
+			.left
+				left: -500px!important
+				width: calc(100vw - 20px)!important
+	section.active
+		footer
+			height: 115px!important
+			.left
+				left: 10px!important
+				width: calc(100vw - 20px)!important
+			.left>a
+				color: $primary-lightest-color!important
+	.banner
+		left: 0!important
+		width: 100vw!important
+		height: 70vh!important
+		.background
+			animation: none!important
+	.right
+		display: none
+	small
+		font-size: 0.75rem!important
+		line-height: 0.75rem!important
+	br
+		line-height: 0.5rem!important
+		height: 0!important
+	.content
+		left: 10px!important
 
 section.active
 	left: 0!important
 	width: 100%
 	.banner
-		transition: 1.5s ease all
+		transition: 1s ease all
 		width: 40vw
 	.content
 		h3
@@ -59,7 +96,7 @@ section
 	top: 0
 	overflow: hidden
 	height: 100vh
-	transition: 1s ease-out all
+	transition: 0.5s ease-out all
 
 	.content
 		h3
@@ -71,7 +108,7 @@ section
 			.emphasis
 				color: $primary-color
 		h1
-			transition: 1.5s ease all
+			transition: 1s ease all
 			letter-spacing: -5px
 			color: $accent-lightest-color
 			font-size: 0
@@ -132,8 +169,8 @@ section
 		top: 10vh
 	footer
 		position: absolute
-		bottom: 5vh
-		height: 10vh
+		bottom: 10vh
+		height: 125px
 		width: 100vw
 
 section.intro.splash
@@ -292,7 +329,7 @@ section.summary.active.scrolled
 	.panel-line.two
 		top: calc(100vh - 1rem)
 	.skills
-		left: 15vw
+		left: calc(10vw + 5px)
 		width: 25vw
 
 section.summary.active
@@ -318,6 +355,7 @@ section.summary
 			font-size: 1rem
 		li
 			font-size: 0.75rem
+			line-height: 0.75rem
 		position: fixed
 		left: -100vw
 		top: 20vh
@@ -352,9 +390,11 @@ section.summary
 		.left
 			transition: 1s ease all
 			position: absolute
-			left: 15vw
+			left: calc(10vw + 5px)
 			top: 10vh
 			font-size: 1.25rem
+			width: calc(25vw - 5px)
+			line-height: 1.2rem
 			.name
 				border-bottom: 1px solid $primary-color
 				padding-bottom: 0.5rem
@@ -401,7 +441,20 @@ section.summary
 		.forward
 			position: absolute
 			right: 0
+	.paper.page-2
+		background-color: $accent-color
+		.education
+			right: 0
+
+		.btn-educ
+			.left
+				display: inline-block
+			.right
+				display: none
+		aside
+			background-color: $accent-light-color
 	.paper
+		transition: 0.5s ease all
 		padding: calc(10vh - 1px) 2rem
 		border-top: calc(1rem + 1px) solid $primary-color
 		position: relative
@@ -411,10 +464,29 @@ section.summary
 		width: 65vw
 		min-height: 100vh
 		background-color: white
+		.btn-educ
+			display: inline-block
+			padding: 1rem
+			.left
+				display: none
+			.right
+				display: inline-block
+		h2
+			font-size: 1.25rem
+		p
+			font-size: 0.75rem
+		.education
+			background-color: white
+			transition: 0.5s ease all
+			padding: calc(10vh - 1px) 2rem
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			right: -100%
 		p
 			margin-bottom: 0.5rem
 		aside
-			padding: 1rem
 			text-align: center
 			font-size: 1rem
 			position: absolute

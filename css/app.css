@@ -29,11 +29,46 @@ html {
     top: -3px;
     animation: 5s travel infinite; }
 
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 3rem !important;
+    letter-spacing: 1px !important; }
+  .explore {
+    display: none !important; }
+  section.active.splash footer {
+    height: 115px !important; }
+    section.active.splash footer .left {
+      left: -500px !important;
+      width: calc(100vw - 20px) !important; }
+  section.active footer {
+    height: 115px !important; }
+    section.active footer .left {
+      left: 10px !important;
+      width: calc(100vw - 20px) !important; }
+    section.active footer .left > a {
+      color: #f2c2c2 !important; }
+  .banner {
+    left: 0 !important;
+    width: 100vw !important;
+    height: 70vh !important; }
+    .banner .background {
+      animation: none !important; }
+  .right {
+    display: none; }
+  small {
+    font-size: 0.75rem !important;
+    line-height: 0.75rem !important; }
+  br {
+    line-height: 0.5rem !important;
+    height: 0 !important; }
+  .content {
+    left: 10px !important; } }
+
 section.active {
   left: 0 !important;
   width: 100%; }
   section.active .banner {
-    transition: 1.5s ease all;
+    transition: 1s ease all;
     width: 40vw; }
   section.active .content h3 {
     font-size: 1.5rem; }
@@ -46,7 +81,7 @@ section {
   top: 0;
   overflow: hidden;
   height: 100vh;
-  transition: 1s ease-out all; }
+  transition: 0.5s ease-out all; }
   section .content h3 {
     transition: 1s ease all;
     letter-spacing: 1px;
@@ -56,7 +91,7 @@ section {
     section .content h3 .emphasis {
       color: #961f1f; }
   section .content h1 {
-    transition: 1.5s ease all;
+    transition: 1s ease all;
     letter-spacing: -5px;
     color: #ababab;
     font-size: 0;
@@ -115,8 +150,8 @@ section {
     top: 10vh; }
   section footer {
     position: absolute;
-    bottom: 5vh;
-    height: 10vh;
+    bottom: 10vh;
+    height: 125px;
     width: 100vw; }
 
 section.intro.splash .banner {
@@ -274,7 +309,7 @@ section.summary.active.scrolled .panel-line.two {
   top: calc(100vh - 1rem); }
 
 section.summary.active.scrolled .skills {
-  left: 15vw;
+  left: calc(10vw + 5px);
   width: 25vw; }
 
 section.summary.active .panel-line {
@@ -301,7 +336,8 @@ section.summary {
       color: #961f1f;
       font-size: 1rem; }
     section.summary .skills li {
-      font-size: 0.75rem; }
+      font-size: 0.75rem;
+      line-height: 0.75rem; }
   section.summary .panel-line {
     transition: 1s ease all; }
   section.summary .panel-line.one {
@@ -332,9 +368,11 @@ section.summary {
   section.summary header .left {
     transition: 1s ease all;
     position: absolute;
-    left: 15vw;
+    left: calc(10vw + 5px);
     top: 10vh;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    width: calc(25vw - 5px);
+    line-height: 1.2rem; }
     section.summary header .left .name {
       border-bottom: 1px solid #961f1f;
       padding-bottom: 0.5rem;
@@ -380,7 +418,18 @@ section.summary {
     section.summary .title .forward {
       position: absolute;
       right: 0; }
+  section.summary .paper.page-2 {
+    background-color: #121212; }
+    section.summary .paper.page-2 .education {
+      right: 0; }
+    section.summary .paper.page-2 .btn-educ .left {
+      display: inline-block; }
+    section.summary .paper.page-2 .btn-educ .right {
+      display: none; }
+    section.summary .paper.page-2 aside {
+      background-color: #2c2c2c; }
   section.summary .paper {
+    transition: 0.5s ease all;
     padding: calc(10vh - 1px) 2rem;
     border-top: calc(1rem + 1px) solid #961f1f;
     position: relative;
@@ -390,10 +439,29 @@ section.summary {
     width: 65vw;
     min-height: 100vh;
     background-color: white; }
+    section.summary .paper .btn-educ {
+      display: inline-block;
+      padding: 1rem; }
+      section.summary .paper .btn-educ .left {
+        display: none; }
+      section.summary .paper .btn-educ .right {
+        display: inline-block; }
+    section.summary .paper h2 {
+      font-size: 1.25rem; }
+    section.summary .paper p {
+      font-size: 0.75rem; }
+    section.summary .paper .education {
+      background-color: white;
+      transition: 0.5s ease all;
+      padding: calc(10vh - 1px) 2rem;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: -100%; }
     section.summary .paper p {
       margin-bottom: 0.5rem; }
     section.summary .paper aside {
-      padding: 1rem;
       text-align: center;
       font-size: 1rem;
       position: absolute;
