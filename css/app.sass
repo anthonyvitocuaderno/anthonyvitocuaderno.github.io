@@ -114,6 +114,9 @@ section.active
 			font-size: 1.5rem
 		h1
 			font-size: 5.5rem
+
+.emphasis
+	color: $primary-color
 section
 	width: 0
 	position: absolute!important
@@ -129,8 +132,6 @@ section
 			text-shadow: black 1px 1px 1px;
 			color: $accent-lightest-color
 			font-size: 0
-			.emphasis
-				color: $primary-color
 		h1
 			transition: 1s ease all
 			letter-spacing: -5px
@@ -488,7 +489,7 @@ section.summary
 			background-color: $accent-light-color
 	.paper
 		transition: 0.5s ease all
-		padding: calc(10vh - 1px) 2rem
+		padding: calc(10vh - 1px) 2rem calc(10vh - 1px) 1rem
 		border-top: calc(1rem + 1px) solid $primary-color
 		position: relative
 		margin-top: 100vh
@@ -497,6 +498,44 @@ section.summary
 		width: 65vw
 		min-height: 100vh
 		background-color: white
+		a
+			color: $primary-color
+		h2
+			margin-bottom: 3rem
+		table
+			tr
+				td
+					width: 50%
+					vertical-align: top
+					.date
+						font-size: 0.8rem
+						line-height: 0.8rem
+						height: 1.6rem
+						padding: 0.4rem 0.6rem
+						border-radius: 0.8rem
+						background-color: $accent-color
+						color: white
+						display: inline-block
+					p
+						text-align: justify
+				td:first-child
+					text-align: right
+					padding-right: 2rem
+					position: relative
+					border-right: 1px solid $primary-color
+					&:after
+						content: " "
+						height: 1.6rem
+						width: 1.6rem
+						background-color: $primary-color
+						position: absolute
+						right: -0.8rem
+						top: 0rem
+						border-radius: 0.8rem
+						border: 0.5rem solid white
+				td:last-child
+					padding-left: 2rem
+					text-align: left
 		.btn-educ
 			display: inline-block
 			padding: 1rem
