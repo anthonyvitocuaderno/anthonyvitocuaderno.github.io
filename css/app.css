@@ -488,9 +488,11 @@ section.summary {
         border-radius: 0.8rem;
         background-color: #121212;
         color: white;
-        display: inline-block; }
+        display: inline-block;
+        margin-bottom: 2rem; }
       section.summary .paper table tr td p {
-        text-align: justify; }
+        text-align: justify;
+        margin-bottom: 1rem; }
     section.summary .paper table tr td:first-child {
       text-align: right;
       padding-right: 2rem;
