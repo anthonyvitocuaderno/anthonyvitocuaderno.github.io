@@ -26,7 +26,13 @@ $accent-lightest-color: lighten($accent-color, 60%)
 		transform: translate(0, 0)
 
 
-
+.btn-intro
+	border: 1px solid $accent-lightest-color
+	font-size: 1rem
+	padding: 0.5rem 1rem
+	border-radius: 1.5rem
+	@media screen and (max-width: 767px) 
+		border-color: $primary-lightest-color
 
 .btn-scroll
 	animation: 1s bouncy infinite
@@ -157,11 +163,12 @@ section
 			right: 0
 			border: 1px solid $accent-lightest-color
 			.fb, .linkedin
-				padding: 0.25rem
+				padding: 0.3rem
 				width: 30px
 				margin: 0
 				display: inline-block
 				text-align: center
+				font-size: 0.75rem
 			.fb
 				background-color: $accent-lightest-color
 				color: $accent-color
@@ -199,7 +206,6 @@ section
 		width: 100vw
 
 section.intro.splash
-	
 	.banner
 		width: 100vw
 		left: 0
@@ -220,7 +226,36 @@ section.intro.splash
 			transform: translate(-1500px, 0)
 		h1
 			transform: translate(-1500px, 0)
+@keyframes vito
+	0%
+		background-size: 100%
+	30%
+		background-size: 100%
+	70%
+		background-size: 150%
+
+	100%
+		background-size: 150%
+@keyframes vitoFade
+	0%
+		opacity: 1
+	30%
+		opacity: 0
+	75%
+		opacity: 0.5
+	100%
+		opacity: 1
 section.intro
+	.weak-overlay
+		width: 100%
+		height: 100%
+		background-color: black
+		animation: 60s vitoFade infinite
+	animation: 60s vito infinite
+	background-image: url('/img/vito.jpg'); 
+	background-position: bottom !important; 
+	background-size: cover !important; 
+	background-attachment: fixed !important; 
 	background-color: $accent-color
 	.brand
 		font-size: 2rem
@@ -361,6 +396,20 @@ section.summary.active.scrolled
 		width: 25vw
 
 section.summary.active
+	.links
+		border: 1px solid $primary-color
+		.fb, .linkedin
+			padding: 0.3rem
+			width: 30px
+			margin: 0
+			display: inline-block
+			text-align: center
+			font-size: 0.75rem
+		.fb
+			background-color: $primary-color
+			color: $accent-lightest-color
+		.linkedin
+			color: $primary-color
 	.panel-line
 		position: fixed
 	header
