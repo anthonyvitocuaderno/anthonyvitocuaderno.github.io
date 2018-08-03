@@ -9,6 +9,9 @@ $accent-color: #121212
 $accent-light-color: lighten($accent-color, 10%)
 $accent-lighter-color: lighten($accent-color, 25%)
 $accent-lightest-color: lighten($accent-color, 60%)
+@font-face
+    font-family: 'DonVito';
+    src: url(/fonts/theGodfather-v2.ttf);
 
 @keyframes bouncy
 	0%
@@ -49,6 +52,7 @@ $accent-lightest-color: lighten($accent-color, 60%)
 html
 	font-size: 12pt
 	background-color: $accent-color
+
 
 @keyframes travel
 	0%
@@ -140,11 +144,11 @@ section
 			font-size: 0
 		h1
 			transition: 1s ease all
-			letter-spacing: -5px
+			letter-spacing: 3px
 			color: $accent-lightest-color
 			font-size: 0
-			font-weight: bold
 			text-shadow: black 1px 1px 1px;
+			font-family: 'DonVito' !important;
 
 	header
 		transition: 2.5s ease all
