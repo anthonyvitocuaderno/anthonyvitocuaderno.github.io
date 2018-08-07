@@ -322,12 +322,13 @@ if (detectWebGLContext()) {
         }
     });
 
-
-    $('section.intro').ripples({
-        resolution: 512,
-        dropRadius: 20,
-        perturbance: 0.04,
-    });
+	if (detectWebGLContext()) {
+	    $('section.intro').ripples({
+	        resolution: 512,
+	        dropRadius: 20,
+	        perturbance: 0.04,
+	    });
+	}
 
 }
 $(document).ready(function() {
@@ -372,7 +373,7 @@ $(document).ready(function() {
 		$('section.intro.splash').removeClass('splash')
 	}, 1000)
 
-	if (detectWebGLContext ()) {
+	if (detectWebGLContext()) {
 		// Automatic drops
 		var raindrops = setInterval(function() {
 			var $el = $('section.intro');

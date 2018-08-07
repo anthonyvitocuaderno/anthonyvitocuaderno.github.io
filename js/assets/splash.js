@@ -3,7 +3,7 @@ $(document).ready(function() {
 		$('section.intro.splash').removeClass('splash')
 	}, 1000)
 
-	if (detectWebGLContext ()) {
+	if (detectWebGLContext()) {
 		// Automatic drops
 		var raindrops = setInterval(function() {
 			var $el = $('section.intro');

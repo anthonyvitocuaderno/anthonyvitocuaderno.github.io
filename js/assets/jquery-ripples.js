@@ -322,11 +322,12 @@ if (detectWebGLContext()) {
         }
     });
 
-
-    $('section.intro').ripples({
-        resolution: 512,
-        dropRadius: 20,
-        perturbance: 0.04,
-    });
+	if (detectWebGLContext()) {
+	    $('section.intro').ripples({
+	        resolution: 512,
+	        dropRadius: 20,
+	        perturbance: 0.04,
+	    });
+	}
 
 }
