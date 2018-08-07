@@ -239,6 +239,7 @@ section.intro.splash .content h1 {
 section.intro {
   animation: 60s vito infinite;
   background-image: url("/img/vito.jpg");
+  background-repeat: no-repeat;
   background-position: bottom !important;
   background-size: cover !important;
   background-attachment: fixed !important;
